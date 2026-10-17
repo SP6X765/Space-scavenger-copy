@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dl5bs77v2f58u"]
+
+[ext_resource type="Script" uid="uid://de6hs6w58ifrm" path="res://start_menu.gd" id="1_jwbto"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
+font_size = 60
+
+[node name="StartMenu" type="Control" unique_id=1768672769]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jwbto")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=228897496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1444743325]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_top = 64.0
+offset_right = 241.0
+offset_bottom = 147.0
+grow_horizontal = 2
+text = "Space Scavenger"
+label_settings = SubResource("LabelSettings_xrivr")
+
+[node name="Start" type="Button" parent="." unique_id=889136221]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -4.0
+offset_right = 26.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start!"
+
+[node name="Settings" type="Button" parent="." unique_id=1512724034]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 29.0
+offset_right = 35.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

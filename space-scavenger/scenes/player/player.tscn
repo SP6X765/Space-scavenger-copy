@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://pf3mj35ro4rj"]
+
+[ext_resource type="Texture2D" uid="uid://w8m6b5c3lh5d" path="res://icon.svg" id="1_8afob"]
+[ext_resource type="Script" uid="uid://bqdvfm1na8pyb" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://bvn77bdfkoypr" path="res://scenes/player/camera_2d.gd" id="3_gmlin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrm0"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_scw2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8afob")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8afob")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8afob")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1357960882]
+floor_snap_length = 5.0
+script = ExtResource("1_dovo2")
+ACCELERATION = 1400.0
+FRICTION = 1500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=887060912]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_nsrm0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1239127469]
+position = Vector2(16, 16)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_scw2r")
+animation = &"run"
+
+[node name="CoyoteJumpTimer" type="Timer" parent="." unique_id=1984550344]
+wait_time = 0.1
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1010150351]
+position = Vector2(16, 16)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+drag_top_margin = 1.0
+drag_bottom_margin = 1.0
+script = ExtResource("3_gmlin")

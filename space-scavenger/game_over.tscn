@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://8wg1yberx8t3"]
+
+[ext_resource type="Script" uid="uid://co2qsi8op7rla" path="res://game_over.gd" id="1_y26ei"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
+font_size = 60
+
+[node name="GameOverScreen" type="Control" unique_id=1580504978]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y26ei")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1245399038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=2131521372]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 52.0
+offset_right = 171.0
+offset_bottom = 135.0
+grow_horizontal = 2
+text = "Game Over!"
+label_settings = SubResource("LabelSettings_xrivr")
+
+[node name="HomeButton" type="Button" parent="." unique_id=1198129651]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -15.5
+offset_right = 87.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return to main menu"
